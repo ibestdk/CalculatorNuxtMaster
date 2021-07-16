@@ -3,7 +3,7 @@
 <div class="calculator">
     <div class="display">{{calculatorValue}}</div>
     <div class="cal_body">
-        <button  @click="action(7)" class="btnc s_button">7</button>
+        <button  @click="action('7')" class="btnc s_button">7</button>
         <button  @click="action(8)" class="btnc s_button">8</button>
         <button  @click="action(9)" class="btnc s_button">9</button>
         <button  @click="action('+')" class="btnc s_button">+</button>
@@ -44,7 +44,18 @@ data() {
 
       // รวมค่าตัวเลข 
       if(!isNaN(n) || n === '.'){
-        this.calculatorValue += n + '';
+        
+        if (n === 0){
+          if(this.calculatorValue === 0) {
+            return this.calculatorValue = "0";
+        }
+        
+    }
+        else{
+          this.calculatorValue += n + '';
+        }
+        
+
       }
       //   ลบค่าที่ละตัว
     if(n === 'ลบ'){
