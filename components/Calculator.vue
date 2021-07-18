@@ -111,10 +111,6 @@ data() {
             case '/':
             this.calculatorValue = parseFloat(this.previousCalculatorValue) / parseFloat(temp_calculatorValue);
                 break;
-
-            default:
-                this.calculatorValue ='Invalid';
-                break;
         }
 
       this.previousCalculatorValue = '';
